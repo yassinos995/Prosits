@@ -12,6 +12,9 @@ public class Animal {
         this.age=age;
         this.isMammal=isMammal;
     }
+    public Animal(){
+
+    }
     //done
     @Override
     public String toString() {

@@ -1,8 +1,9 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+
+import tn.esprit.gestionzoo.entities.*;
+
 public class Main {
     public static void main(String[] args) {
         Animal lion=new Animal("fadeo","simba",100,true);
@@ -13,6 +14,15 @@ public class Main {
         Animal dragon=new Animal("dragons","bob",40,true);
         Animal corcodille=new Animal("croco","crocoo",-4,true);
         Animal mouse=new Animal("mouses","jerry",4,true);
+        Aquatiques AnimalAquatique=new Aquatiques();
+        Terrests AnimalTerrest=new Terrests();
+        Daulphine daulphine=new Daulphine();
+        Penguin penguin=new Penguin();
+        System.out.println("aquatic animal created: "+AnimalAquatique);
+        System.out.println("terrest animal created: "+AnimalTerrest);
+        System.out.println("daulphine created: "+daulphine);
+        System.out.println("penguin created: "+penguin);
+
 
         Zoo myzoo=new Zoo("friguia","nabeul");
         System.out.println("Nom du zoo : " + myzoo.getName());

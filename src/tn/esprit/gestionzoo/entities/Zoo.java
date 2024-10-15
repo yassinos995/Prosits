@@ -11,7 +11,7 @@ public class Zoo {
         this.animals = new Animal[25];  // Initializes an array of size 25
         this.name = name;
         this.city = city;
-        this.nbrCages = 7;  // Maximum capacity of the zoo is 5 animals (or cages)
+        this.nbrCages = 10;  // Maximum capacity of the zoo is 5 animals (or cages)
         this.animaux = 0;
         if (name == null || name.trim().isEmpty()) {
             System.out.println("Le nom du zoo est requis. Impossible de créer un zoo sans nom.");
