@@ -14,6 +14,7 @@ public class Main {
         Animal dragon=new Animal("dragons","bob",40,true);
         Animal corcodille=new Animal("croco","crocoo",-4,true);
         Animal mouse=new Animal("mouses","jerry",4,true);
+
         Aquatiques AnimalAquatique=new Aquatiques();
         Terrests AnimalTerrest=new Terrests();
         Daulphine daulphine=new Daulphine();
@@ -22,6 +23,10 @@ public class Main {
         System.out.println("terrest animal created: "+AnimalTerrest);
         System.out.println("daulphine created: "+daulphine);
         System.out.println("penguin created: "+penguin);
+        AnimalAquatique.swim();
+        daulphine.swim();
+        penguin.swim();
+
 
 
         Zoo myzoo=new Zoo("friguia","nabeul");

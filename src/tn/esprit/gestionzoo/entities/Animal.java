@@ -13,6 +13,7 @@ public class Animal {
         this.isMammal=isMammal;
     }
     public Animal(){
+        
 
     }
     //done
