@@ -1,74 +1,54 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 import tn.esprit.gestionzoo.entities.*;
 
 public class Main {
     public static void main(String[] args) {
-        Animal lion=new Animal("fadeo","simba",100,true);
-        Animal bird=new Animal("flyer","twiti",1,false);
-        Animal betri9=new Animal("flyer","betri9",20,true);
-        Animal dog=new Animal("fadeo","bobi",50,true);
-        Animal zrafa=new Animal("mouton","z1",50,true);
-        Animal dragon=new Animal("dragons","bob",40,true);
-        Animal corcodille=new Animal("croco","crocoo",-4,true);
-        Animal mouse=new Animal("mouses","jerry",4,true);
+        // Creating terrestrial animals
+        Animal lion = new Animal("fadeo", "simba", 100, true);
+        Animal bird = new Animal("flyer", "twiti", 1, false);
+        Animal mouse = new Animal("mouses", "jerry", 4, true);
 
-        Aquatiques AnimalAquatique=new Aquatiques();
-        Terrests AnimalTerrest=new Terrests();
-        Daulphine daulphine=new Daulphine();
-        Penguin penguin=new Penguin();
-        System.out.println("aquatic animal created: "+AnimalAquatique);
-        System.out.println("terrest animal created: "+AnimalTerrest);
-        System.out.println("daulphine created: "+daulphine);
-        System.out.println("penguin created: "+penguin);
-        AnimalAquatique.swim();
-        daulphine.swim();
-        penguin.swim();
-
-
-
-        Zoo myzoo=new Zoo("friguia","nabeul");
-        System.out.println("Nom du zoo : " + myzoo.getName());
-        myzoo.setName("");
-        Zoo myzoo2=new Zoo("","nabeul");
-        System.out.println("Nom du zoo : " + myzoo.getName());
-        myzoo.setName("");
-        if(!myzoo2.isFull()) {
-            System.out.println("Ajout de mouse : " + myzoo2.addAnimal(mouse));}
-
-        if(!myzoo.isFull()) {
-            System.out.println("Ajout de lion : " + myzoo.addAnimal(lion));}
-            if(!myzoo.isFull()){
-            System.out.println("Ajout de betri9 : " + myzoo.addAnimal(betri9));}
-            if(!myzoo.isFull()){
-            System.out.println("Ajout de bird : " + myzoo.addAnimal(bird));
-                if(!myzoo.isFull()){
-                    System.out.println("ajout de dog :" + myzoo.addAnimal(dog));
-                }if(!myzoo.isFull()){
-                    System.out.println("ajout de zarafa :" + myzoo.addAnimal(zrafa));
-                }
-                if(!myzoo.isFull()){
-                    System.out.println("ajout de dragon :" + myzoo.addAnimal(dragon));
-                }
-                if(!myzoo.isFull()){
-                    System.out.println("ajout de dragon :" + myzoo.addAnimal(corcodille));
-                }
+        // Create aquatic animals
+        Daulphine dolphin = new Daulphine();  // Assuming Dolphin is a subclass of Aquatiques
+        Penguin penguin = new Penguin();  // Assuming Penguin is also a subclass of Aquatiques
+        Aquatiques dolphin1 = new Aquatiques("Marine Mammal", "Dolphin", 5, true, "Ocean");
+        Aquatiques dolphin2 = new Aquatiques("Marine Mammal", "Dolphin", 5, true, "Ocean");
+        if (dolphin1.equals(dolphin2)) {
+            System.out.println("Both dolphins are identical.");
+        } else {
+            System.out.println("Dolphins are not identical.");
         }
-      myzoo.displayZooAnimals();
-      String animalName="aziz";
-      int index= myzoo.searchAnimal(animalName);
-      if (index != -1){
-          System.out.println("Animal trouvé"+myzoo.getAnimals()[index]+"de lindice "+index);
-      }else{
-          System.out.println("Animal : "+animalName+" n'existe pas");
-      }
-     //   System.out.println("you will delete "+cat.name);
-      //myzoo.supprimerAnimal(cat);
-        //myzoo.displayzooAnimals();
-        myzoo.isFull();
 
+        // Create the zoo
+        Zoo myZoo = new Zoo("Aquatic World", "Tunis");
+
+        // Add aquatic animals to the zoo
+
+        myZoo.addAquaticAnimal(dolphin);
+        myZoo.addAquaticAnimal(penguin);
+
+        // Display aquatic animals and their swimming action
+        myZoo.displayAquaticAnimals();
+
+        Zoo friguiaZoo = new Zoo("Friguia", "Nabeul");
+
+        // Add terrestrial animals to the zoo
+        if (!friguiaZoo.isFull()) friguiaZoo.addAnimal(mouse);
+        if (!friguiaZoo.isFull()) friguiaZoo.addAnimal(lion);
+        if (!friguiaZoo.isFull()) friguiaZoo.addAnimal(bird);
+
+        // Display all animals in the zoo
+        friguiaZoo.displayZooAnimals();
+
+        // Search for an animal in the zoo
+        String animalName = "aziz";
+        int index = friguiaZoo.searchAnimal(animalName);
+        if (index != -1) {
+            System.out.println("Animal found: " + friguiaZoo.getAnimals()[index] + " at index " + index);
+        } else {
+            System.out.println("Animal: " + animalName + " does not exist.");
+        }
+
+        // Check if the zoo is full
+        friguiaZoo.isFull();
     }
-
 }

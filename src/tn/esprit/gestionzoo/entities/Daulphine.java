@@ -9,7 +9,7 @@ public class Daulphine extends Aquatiques {
 
     // Parameterized constructor
     public Daulphine(String family, String name, int age, boolean isMammal, String habitat, double swimmingSpeed) {
-        super(family, name, age, isMammal, habitat);  // Call the constructor of Aquatiques
+        super(family, name, age, isMammal, habitat);
         this.swimmingSpeed = swimmingSpeed;
     }
 
