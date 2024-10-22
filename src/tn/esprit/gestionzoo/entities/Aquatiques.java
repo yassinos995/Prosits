@@ -1,11 +1,15 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Aquatiques extends Animal {
+public abstract class Aquatiques extends Animal {
     private String habitat;  // Assuming habitat is a property in Aquatic
 
     public Aquatiques(String type, String name, int age, boolean isWild, String habitat) {
         super(type, name, age, isWild);
         this.habitat = habitat;
+    }
+
+    public Aquatiques() {
+
     }
 
     // Getters and Setters for habitat
@@ -47,4 +51,6 @@ public class Aquatiques extends Animal {
         result = 31 * result + habitat.hashCode();
         return result;
     }
+
+    public abstract void swim();
 }

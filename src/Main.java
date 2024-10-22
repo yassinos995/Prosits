@@ -10,8 +10,18 @@ public class Main {
         // Create aquatic animals
         Daulphine dolphin = new Daulphine();  // Assuming Dolphin is a subclass of Aquatiques
         Penguin penguin = new Penguin();  // Assuming Penguin is also a subclass of Aquatiques
-        Aquatiques dolphin1 = new Aquatiques("Marine Mammal", "Dolphin", 5, true, "Ocean");
-        Aquatiques dolphin2 = new Aquatiques("Marine Mammal", "Dolphin", 5, true, "Ocean");
+        Aquatiques dolphin1 = new Aquatiques("Marine Mammal", "Dolphin", 5, true, "Ocean") {
+            @Override
+            public void swim() {
+                
+            }
+        };
+        Aquatiques dolphin2 = new Aquatiques("Marine Mammal", "Dolphin", 5, true, "Ocean") {
+            @Override
+            public void swim() {
+
+            }
+        };
         if (dolphin1.equals(dolphin2)) {
             System.out.println("Both dolphins are identical.");
         } else {
