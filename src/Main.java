@@ -4,9 +4,10 @@ public class Main {
     public static void main(String[] args) {
         try {
             // Creating terrestrial animals
-            Animal lion = new Animal("Carnivore", "Simba", 5, true);
-            Animal bird = new Animal("Omnivore", "Tweety", 2, false);
-            Animal mouse = new Animal("Herbivore", "Jerry", 1, true);
+            Animal lion = new Animal("tn.esprit.gestionzoo.entities.Carnivore", "Simba", 5, true);
+            Animal bird = new Animal("tn.esprit.gestionzoo.entities.Omnivore", "Tweety", 2, false);
+            Animal mouse = new Animal("tn.esprit.gestionzoo.entities.Herbivore", "Jerry", 1, true);
+            Terrests tiger = new Terrests("Carnivore", "Tiger", 4, true, 4);
 
             // Creating aquatic animals
             Daulphine dolphin = new Daulphine("Marine Mammal", "Dolphin", 7, true, "Ocean");
@@ -24,7 +25,9 @@ public class Main {
 
             // Create the first zoo
             Zoo myZoo = new Zoo("Aquatic World", "Tunis");
-
+            tiger.eatMeat(Food.MEAT); 
+            tiger.eatPlant(Food.PLANT);
+            tiger.eatPlantAndMeat(Food.BOTH);
             // Add aquatic animals to the zoo
             myZoo.addAquaticAnimal(dolphin);
             myZoo.addAquaticAnimal(penguin);
