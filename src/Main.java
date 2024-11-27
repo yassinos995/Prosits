@@ -7,8 +7,8 @@ public class Main {
         s1.ajouterEmploye(emp1);
         s1.ajouterEmploye(emp2);
 
-       /* System.out.println(emp2);
-        System.out.println(emp1.equals(emp2));*/
+        System.out.println(emp2);
+        System.out.println(emp1.equals(emp2));
         s1.displayEmploye();
         s1.trierEmployeParId();
         s1.displayEmploye();
