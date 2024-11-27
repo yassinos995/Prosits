@@ -1,15 +1,15 @@
-public class employé implements Comparable<employé> {
+public class employe implements Comparable<employe> {
     int identifiant;
     String nom;
-    String prénom;
+    String prenom;
 
     String nomDepartement;
     int grade;
-    public employé(){}
-    public employé(int identifiant,String nom,String prénom,String nomDepartement,int grade){
+    public employe(){}
+    public employe(int identifiant,String nom,String prenom,String nomDepartement,int grade){
         this.identifiant=identifiant;
         this.nom=nom;
-        this.prénom=prénom;
+        this.prenom=prenom;
         this.nomDepartement=nomDepartement;
         this.grade=grade;
     }
@@ -30,12 +30,12 @@ public class employé implements Comparable<employé> {
         this.nom = nom;
     }
 
-    public String getPrénom() {
-        return prénom;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setPrénom(String prénom) {
-        this.prénom = prénom;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     public String getNomDepartement() {
@@ -58,20 +58,20 @@ public class employé implements Comparable<employé> {
     public boolean equals(Object obj) {
         if(this==obj) return true;
         if (obj == null || getClass()!=obj.getClass()) return false;
-         employé employe =(employé) obj;
+         employe employe =(employe) obj;
         return identifiant == employe.identifiant && nom.equals(employe.nom);
     }
 
     @Override
     public String toString() {
         return "employe { id :"+identifiant+
-                ", nom: "+nom+",prénom: "+prénom+
-                ",de département: "+nomDepartement+
+                ", nom: "+nom+",prenom: "+prenom+
+                ",de departement: "+nomDepartement+
                 "avec la grade: "+grade+"}";
     }
 
     @Override
-    public int compareTo(employé otherEmploye) {
+    public int compareTo(employe otherEmploye) {
         return Integer.compare(this.identifiant ,otherEmploye.identifiant);
     }
 }

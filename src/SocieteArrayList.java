@@ -1,22 +1,22 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class SocieteArrayList implements Igestion<employé>{
-    private ArrayList<employé> employés =new ArrayList<>();
+public class SocieteArrayList implements Igestion<employe>{
+    private ArrayList<employe> employes =new ArrayList<>();
 
 
     @Override
-    public void ajouterEmploye(employé emp) {
-        if(!employés.contains(emp)){
-     employés.add(emp);
+    public void ajouterEmploye(employe emp) {
+        if(!employes.contains(emp)){
+     employes.add(emp);
         }else{
-            System.out.println("Employé déjà existant !");
+            System.out.println("Employe dejà existant !");
         }
     }
 
     @Override
     public boolean rechercherEmployer(String nom) {
-        for(employé e :employés){
+        for(employe e :employes){
             if(e.getNom().equals(nom)){
                 return true;
             }
@@ -26,20 +26,20 @@ public class SocieteArrayList implements Igestion<employé>{
 
 
     @Override
-    public boolean rechercherEmploye(employé emp) {
+    public boolean rechercherEmploye(employe emp) {
 
-        return employés.contains(emp);
+        return employes.contains(emp);
     }
 
     @Override
-    public void supprimerEmploye(employé emp) {
-        employés.remove(emp);
+    public void supprimerEmploye(employe emp) {
+        employes.remove(emp);
 
     }
 
     @Override
     public void displayEmploye() {
-        for(employé e : employés){
+        for(employe e : employes){
 
             System.out.println(e);
         }
@@ -48,12 +48,12 @@ public class SocieteArrayList implements Igestion<employé>{
 
     @Override
     public void trierEmployeParId() {
-        Collections.sort(employés);
+        Collections.sort(employes);
 
     }
 
     @Override
-    public void trierEmployeParNomDépartementEtGrade() {
+    public void trierEmployeParNomDepartementEtGrade() {
 
     }
 }
